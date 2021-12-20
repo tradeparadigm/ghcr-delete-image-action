@@ -21,7 +21,7 @@ describe("getConfig", () => {
   });
 
   const sharedRequiredOpts = {
-    INPUT_OWNER: "bots-house",
+    INPUT_OWNER: "tradeparadigm",
     INPUT_NAME: "ghcr-delete-image-action",
     INPUT_TOKEN: "some-token",
   };
@@ -34,7 +34,7 @@ describe("getConfig", () => {
       },
       () => {
         expect(utils.getConfig()).toStrictEqual({
-          owner: "bots-house",
+          owner: "tradeparadigm",
           name: "ghcr-delete-image-action",
           token: "some-token",
           tag: "latest",
@@ -111,7 +111,7 @@ describe("findPackageVersionByTag", () => {
   test("existing version returns object", async () => {
     const packageVersion = await utils.findPackageVersionByTag(
       octokit,
-      "bots-house",
+      "tradeparadigm",
       "docker-telegram-bot-api",
       "fbb8b4c-b21d667"
     );
@@ -122,7 +122,7 @@ describe("findPackageVersionByTag", () => {
     return expect(
       utils.findPackageVersionByTag(
         octokit,
-        "bots-house",
+        "tradeparadigm",
         "docker-telegram-bot-api",
         "test"
       )
@@ -139,7 +139,7 @@ describe("findPackageVersionsUntaggedOrderGreaterThan", () => {
   test("returns greater than 5 objects", async () => {
     const pkgs = await utils.findPackageVersionsUntaggedOrderGreaterThan(
       octokit,
-      "bots-house",
+      "tradeparadigm",
       "docker-telegram-bot-api",
       2
     );
@@ -152,7 +152,7 @@ describe("findPackageVersionsUntaggedOrderGreaterThan", () => {
   //   return expect(
   //     utils.findPackageVersionByTag(
   //       octokit,
-  //       "bots-house",
+  //       "tradeparadigm",
   //       "docker-telegram-bot-api",
   //       "test"
   //     )
